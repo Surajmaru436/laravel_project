@@ -58,7 +58,7 @@ class CategoryController extends Controller
     {
         //
         
-        return view("category edit",[$info=>category]);
+        return view("category.edit",[$info=>category]);
     }
 
     /**
