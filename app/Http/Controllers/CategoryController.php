@@ -38,7 +38,7 @@ class CategoryController extends Controller
             'description'=>$request['description'],
           ];
           category::create($info);
-          return redirect('/category');
+          return redirect('/category')->with('success','Data  successfully');
         
     }
 
@@ -54,30 +54,35 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(category $category)
+    public function edit($id)
     {
         //
-        
+        $category=category::find($id);
         return view("category.edit",['info'=>$category]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request,$id)
     {
         //
+        $category=category::find($id);
         $category->name=$request->name;
         $category->description=$request->description;
         $category->save();
-        return redriect('/category');
+        return redirect('/category')->with('success','Data updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(category $category)
+    public function destroy($id)
     {
         //
+        $category= category::find($id);
+        $category->delete();
+        return redirect('/category')->with('success','Data deleted successfully');
+
     }
 }
