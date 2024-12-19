@@ -13,3 +13,6 @@ Route::get('/category/{id}',[categorycontroller::class,'show']);
 Route::get('/category/{id}/edit',[categorycontroller::class,'edit']);
 Route::put('/category/{id}',[categorycontroller::class,'update']);
 Route::delete('/category/{id}',[categorycontroller::class,'destroy']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
