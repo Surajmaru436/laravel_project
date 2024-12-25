@@ -13,9 +13,12 @@ class categoryseeder extends Seeder
     public function run(): void
     {
         //
-        category::create([
-            'name' => 'Electronics',
-            'description' => 'Electronics products'
-        ]);
+        category::factory(10)->create();
+        category::factory(10)->create();
+
+
+
+
+    
     }
 }
