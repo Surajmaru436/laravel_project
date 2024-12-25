@@ -15,10 +15,5 @@ class categoryseeder extends Seeder
         //
         category::factory(10)->create();
         category::factory(10)->create();
-
-
-
-
-    
     }
 }
