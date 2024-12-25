@@ -24,7 +24,13 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('category.create');
+        $data=[
+            ['name' =>"bikaner",'id' =>3],
+            ['name' =>"Jaipur",'id' =>2],
+            ['name' =>"Jodhpur",'id' =>1],
+            ['name' =>"Nokha",'id' =>43]
+        ];
+        return view('category.create',compact('data'));
     }
 
     /**
