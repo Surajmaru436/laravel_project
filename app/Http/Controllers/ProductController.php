@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use App\Http\Middleware\Agecheak;
 
 class ProductController extends Controller
 {

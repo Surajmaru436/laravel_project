@@ -6,16 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Textbox extends Component
+class selectbox extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $name,public array $data=[])
+    public function __construct()
     {
         //
-        dd($data);
-        
     }
 
     /**
@@ -23,6 +21,6 @@ class Textbox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.textbox');
+        return view('components.selectbox');
     }
 }
